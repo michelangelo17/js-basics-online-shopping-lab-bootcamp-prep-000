@@ -52,6 +52,7 @@ function viewCart() {
     return console.log(string);
   }
 }
+<<<<<<< HEAD
 
 var sum = 0;
 
@@ -79,13 +80,44 @@ function removeFromCart(removeMe) {
   if (notFound === found) {
     return console.log('That item is not in your cart.');
   }
+=======
+function removeFromCart(removeMe) {
+  var beforeCart = cart.slice(0);
+  var beforeCartLength = beforeCart.length;
+  var notFound = '';
+  var found = '';
+  for (let i = 0; cart.length > i; i++) {
+    if (cart[i].hasOwnProperty(removeMe) === true) {
+      cart.splice(i, 1);
+      found += 'Found';
+      return console.log(cart);
+    }
+  }
+  if (notFound === found) {
+    return console.log('That item is not in your cart.');
+  }
+}
+
+var sum = 0;
+
+function total() {
+  for (let i = 0; cart.length > i; i++) {
+   sum += cart[i][Object.keys(cart[i])[0]];
+  }
+  return sum;
+>>>>>>> 50b44c9d7d9ce68c1b76df9f27f5a05dc1710a5d
 }
 
 function placeOrder(ccn) {
   if (ccn === undefined) {
     return console.log("Sorry, we don't have a credit card on file for you.");
   } else {
+<<<<<<< HEAD
      console.log(`Your total cost is $${sum}, which will be charged to the card ${ccn}.`);
      cart = [];
+=======
+    console.log(`Your total cost is $${sum}, which will be charged to the card ${ccn}.`);
+    cart = [];
+>>>>>>> 50b44c9d7d9ce68c1b76df9f27f5a05dc1710a5d
   }
 }
